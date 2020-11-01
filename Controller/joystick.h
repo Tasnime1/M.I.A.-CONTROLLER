@@ -2,32 +2,29 @@
 #define JOYSTICK_H
 
 #include <QTimer>
-
-#include <QMainWindow>
 #include <QObject>
-#include <QWidget>
+#include "SDL.h"
+#undef main
 
-#include <QTimer>
-#include <SDL.h>
-
-class Joystick : public QTimer
+class Joystick : public QObject
 {
-   // Q_OBJECT
-
+    Q_OBJECT
 public:
-    Joystick();
-    void JoystickButtons();
+    explicit Joystick(QObject *parent = nullptr);
 
 private:
     SDL_Event event;
-    SDL_Joystick *joystick=nullptr;
+    SDL_Joystick *Joy;
 
-    QTimer *timer2;
+    QTimer *timer;
+
+    QString movement;
+
+signals:
+    void move(QString);
 
 public slots:
-    void Timer2();
-
-
+    void Joystickk();
 };
 
 #endif // JOYSTICK_H

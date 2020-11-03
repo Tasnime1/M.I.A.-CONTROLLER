@@ -15,7 +15,7 @@ class Arduino : public QMainWindow
 public:
     Arduino(QWidget *parent = nullptr);
     ~Arduino();
-    void SendRecieve(QString);
+    //void Recieve(QString);
     void SendSensorReading(QString);
 
 private:
@@ -28,11 +28,14 @@ private:
 
     QString Sensors="";
     QString Command;
+    QString CommandP="HV";
 
     Joystick *joy;
+    QTimer *myTimer;
 
 public slots:
-    void moveSlot(QString);
+    void movementSlot(QString);
+    void RecieveSlot();
 
 };
 #endif // ARDUINO_H

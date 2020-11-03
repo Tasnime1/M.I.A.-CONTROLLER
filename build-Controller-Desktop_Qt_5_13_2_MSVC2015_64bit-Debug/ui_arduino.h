@@ -35,9 +35,6 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLineEdit *lineEdit2;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_3;
-    QLabel *label_5;
     QLabel *label_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -46,7 +43,7 @@ public:
     {
         if (Arduino->objectName().isEmpty())
             Arduino->setObjectName(QString::fromUtf8("Arduino"));
-        Arduino->resize(800, 241);
+        Arduino->resize(800, 178);
         centralwidget = new QWidget(Arduino);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout_5 = new QHBoxLayout(centralwidget);
@@ -92,23 +89,6 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
-
-        horizontalLayout_3->addWidget(label_3);
-
-        label_5 = new QLabel(centralwidget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setFont(font);
-
-        horizontalLayout_3->addWidget(label_5);
-
-
-        verticalLayout->addLayout(horizontalLayout_3);
-
 
         horizontalLayout_4->addLayout(verticalLayout);
 
@@ -140,8 +120,6 @@ public:
         Arduino->setWindowTitle(QCoreApplication::translate("Arduino", "Arduino", nullptr));
         label->setText(QCoreApplication::translate("Arduino", "Vertical:       ", nullptr));
         label_2->setText(QCoreApplication::translate("Arduino", "Horizontal:", nullptr));
-        label_3->setText(QCoreApplication::translate("Arduino", "Command: ", nullptr));
-        label_5->setText(QCoreApplication::translate("Arduino", "command  will appear here", nullptr));
         label_4->setText(QCoreApplication::translate("Arduino", "Sensors' readings...", nullptr));
     } // retranslateUi
 

@@ -18,7 +18,7 @@ private:
 
     QTimer *timer;
 
-    QString movement;
+    QString movement="";
 
 signals:
     void move(QString);

@@ -27,28 +27,43 @@ Joystick::Joystick(QObject *parent) : QObject(parent)
 
 void Joystick:: Joystickk(){
 
-    //qDebug()<<"Im here";
+
     emit move(movement);
 
     SDL_PollEvent(&event);
-    if(SDL_JoystickGetButton(Joy,0)){qDebug()<<"You pressed button 1";
+
+    if(SDL_JoystickGetButton(Joy,4)){qDebug()<<"You pressed Forward";
     movement="F";}
-    if(SDL_JoystickGetButton(Joy,1)){qDebug()<<"You pressed button 2";
+
+    if(SDL_JoystickGetButton(Joy,5)){qDebug()<<"You pressed Right";
     movement="R";}
-    if(SDL_JoystickGetButton(Joy,2)){qDebug()<<"You pressed button 3";
+
+    if(SDL_JoystickGetButton(Joy,6)){qDebug()<<"You pressed Back";
     movement="B";}
-    if(SDL_JoystickGetButton(Joy,3)){qDebug()<<"You pressed button 4";
+
+    if(SDL_JoystickGetButton(Joy,7)){qDebug()<<"You pressed Left";
     movement="L";}
-    if(SDL_JoystickGetButton(Joy,4)){qDebug()<<"You pressed button 5";
-    movement="Y";}
-    if(SDL_JoystickGetButton(Joy,5)){qDebug()<<"You pressed button 6";
-    movement="X";}
-    if(SDL_JoystickGetButton(Joy,6)){qDebug()<<"You pressed button 7";
-    movement="D";}
-    if(SDL_JoystickGetButton(Joy,7)){qDebug()<<"You pressed button 8";
-    movement="U";}
-    if(SDL_JoystickGetButton(Joy,8)){qDebug()<<"You pressed button 9";} //9 on joystick
-    if(SDL_JoystickGetButton(Joy,9)){qDebug()<<"You pressed button 10";} //10 on joystick
+
+    if(SDL_JoystickGetButton(Joy,12)){qDebug()<<"You pressed TRIANGLE";
+    movement="U";
+    }
+
+    if(SDL_JoystickGetButton(Joy,13)){qDebug()<<"You pressed CIRCLE";
+    movement="X";
+    }
+
+    if(SDL_JoystickGetButton(Joy,14)){qDebug()<<"You pressed X";
+    movement="D";
+    }
+
+    if(SDL_JoystickGetButton(Joy,15)){qDebug()<<"You pressed SQUARE";
+    movement="Y";
+    }
+
+    //CONFIGURE A BUTTON TO STOP!!
+    if(SDL_JoystickGetButton(Joy,19)){qDebug()<<"You pressed SQUARE";
+    movement="Y";
+    }
 
 }
 
